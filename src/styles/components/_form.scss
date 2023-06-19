@@ -1,0 +1,102 @@
+.form-page-container{
+    height: 92vh;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   letter-spacing: 1px;
+
+   
+    .form-container{
+        box-shadow: 0 0px 22px 6px rgba(252, 164, 164, 0.2);
+        padding: 10px;
+        h2{
+            display: flex;
+            justify-content: center;
+            margin: 10px 0;
+            text-transform: uppercase;
+            font-size: 1.3rem;
+            }
+
+            form {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                min-width: 260px;
+               
+            
+                .radios-container{
+                    display: flex;
+                    justify-content: center;
+            
+                   
+            
+                    label{
+                        cursor: pointer;
+                        font-size: 0.6rem;
+                        letter-spacing: 2px;
+                        text-transform: uppercase;
+                        user-select: none;
+                       
+                        border: 1px solid pink;
+                        transition: 0.2s;
+                        margin: 0;
+                      
+                    }
+            
+                    .label-left{
+                        border-top-left-radius: 20px;
+                        border-bottom-left-radius: 20px;
+                        padding: 12px 12px 12px 24px; 
+                    }
+                    .label-rigth{
+                        border-top-right-radius: 20px;
+                        border-bottom-right-radius: 20px;
+                        padding: 12px 24px 12px 12px; 
+                    }
+            
+                    input[type="radio"] {
+                        display: none;
+            
+                        &:checked {
+                            + label {
+                             background: pink;
+                             color: red;
+                            transform: scale(1.1);
+                            filter: brightness(120%);
+                            }
+                        }
+                    }
+                }
+               
+                label{
+                    margin: 10px;
+                    font-size: 0.9rem;
+                    
+                }
+                input{
+                    margin: 10px;
+                   
+                    &[type="text"]{
+                        margin: 10px;
+                        font-size: 0.8rem;
+                        padding: 10px;
+                        
+                    }
+                    &[type="password"]{
+                        padding: 10px;
+                    }
+                    
+                }
+
+                .btn-container{
+                    display: flex;
+                    margin: 12px auto;
+                }
+                
+               }
+    }
+
+
+ 
+}

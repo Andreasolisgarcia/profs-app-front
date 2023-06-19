@@ -1,0 +1,29 @@
+.nav-container{
+    padding: 10px;
+
+  
+    nav{
+        width: 90vw;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+
+        height: 40px;
+
+        ul {
+            display: flex;
+            justify-content: space-between;
+        }
+        .rigth-part {
+            min-width: 280px;
+            justify-content: flex-end;
+            
+            .btn-1{
+                margin-left: 10px;
+            }
+
+        }
+    }
+}

@@ -1,0 +1,91 @@
+$font1: "Inter", sans-serif;
+$font2: "Montserrat-300", sans-serif;
+
+@font-face {
+    font-family: $font1;
+    src: url('./fonts/Inter/Inter-VariableFont_slnt,wght.ttf');
+}
+
+@font-face {
+    font-family: $font2;
+    src: url('./fonts/Montserrat_Alternates/MontserratAlternates-Light.ttf');
+}
+
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+    list-style-type: none;
+    font-family: $font1;
+   
+}
+
+button{
+    background: none;
+    cursor: pointer;
+    }
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.btn-1{
+    height: 40px;
+    border-radius: 40px;
+    padding: 0 24px; 
+    border: 1px solid rgba(134, 131, 131, 0.747);
+    letter-spacing: 1px;
+    
+        &:first-letter{
+            text-transform: capitalize;
+        }
+}
+
+.btn-2{
+    font-size: 0.6rem;
+    height: 30px;
+    border-radius: 7px;
+    padding: 0 10px; 
+    border: 1px solid rgba(134, 131, 131, 0.335);
+    text-transform: uppercase;
+   letter-spacing: 2px;
+    
+        &:first-letter{
+            text-transform: capitalize;
+        }
+    
+}
+.btn-cap{
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+}
+
+.btn-complementary-left{
+    height: 40px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    padding: 0px 12px 0 24px; 
+    border: 1px solid pink;
+    
+    
+        &:first-letter{
+            text-transform: capitalize;
+        }
+
+}
+.btn-complementary-right{
+    height: 40px;
+    padding: 0 24px 0 12px; 
+    border: 1px solid pink;
+    background: pink;
+    color: red;
+    filter: brightness(120%);
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    
+        &:first-letter{
+            text-transform: capitalize;
+        }
+
+}
