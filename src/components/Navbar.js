@@ -14,10 +14,10 @@ const Navbar = () => {
         <ul class="rigth-part">
           <li>
             <Link to="/teachers">
-            <button class="btn-1">Teachers</button></Link>
+            <button className="btn-1">Teachers</button></Link>
           </li>
           <li>
-          <Link to="./login"><button class="btn-1">connexion</button></Link>
+          <Link to="./login"><button className="btn-1">connexion</button></Link>
           </li>
         </ul>
       </nav>
