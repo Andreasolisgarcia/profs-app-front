@@ -8,7 +8,7 @@ import SignIn from './pages/SignIn';
 import Teachers from './pages/Teachers';
 import Courses from './pages/Courses';
 
-const coursesURL = "http://127.0.0.1:3000/courses"
+const coursesURL = "http://localhost:3000/courses"
 
 function App() {
   const[courses, setCourses] = useState([])
