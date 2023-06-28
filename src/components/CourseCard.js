@@ -27,7 +27,7 @@ const CourseCard = ({ course }) => {
                     </div>
 
                     <div className="footer">
-                        <p>40 € h</p>
+                        <p>{course.price} h</p>
                         <button className="more-btn"></button>
                     </div>
                 </div>

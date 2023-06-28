@@ -5,10 +5,10 @@ import Typed from 'typed.js';
 
 
 const Header = () => {
-    const el = useRef(null); // Ref to store the DOM element
+    const el = useRef(null); 
 
   useEffect(() => {
-    // Initialize Typed.js inside the useEffect hook
+
     const typed = new Typed(el.current, {
       strings: [
         "Grades",
@@ -30,7 +30,6 @@ const Header = () => {
     loop: true
     });
 
-    // Clean up the Typed instance during component unmount
     return () => {
       typed.destroy();
     };
