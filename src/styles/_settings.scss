@@ -1,17 +1,30 @@
-$font1: "Inter", sans-serif;
+
+$color7: rgb(254,204,0);
+$color1: #fff477;
+$color2: #26442b;
+$color3: #fea9be;
+$color4: #209cfe;
+$color5: pink;
+$color6: red;
+$color0: #073b46;
+
+
+
+
+@font-face {
+    font-family: "Inter", sans-serif;
+    src: url('../assets/fonts/Inter/Inter-VariableFont_slnt\,wght.ttf');
+}
+
+@font-face {
+    font-family: Montserrat-300;
+    src: url('../assets/fonts/Montserrat_Alternates/MontserratAlternates-Black.ttf');
+}
+
 $font2: "Montserrat-300", sans-serif;
+$font1: "Inter", sans-serif;
 
 
-
-@font-face {
-    font-family: $font1;
-    src: url('./fonts/Inter/Inter-VariableFont_slnt,wght.ttf');
-}
-
-@font-face {
-    font-family: $font2;
-    src: url('./fonts/Montserrat_Alternates/MontserratAlternates-Light.ttf');
-}
 
 *{
     margin: 0;
@@ -35,8 +48,9 @@ a{
     height: 40px;
     border-radius: 40px;
     padding: 0 24px; 
-    border: 1px solid rgba(134, 131, 131, 0.747);
+    border: 1px solid $color0;
     letter-spacing: 1px;
+    background: none;
     
         &:first-letter{
             text-transform: capitalize;
@@ -68,7 +82,7 @@ a{
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
     padding: 0px 12px 0 24px; 
-    border: 1px solid pink;
+    border: 1px solid $color5;
     
     
         &:first-letter{
@@ -79,9 +93,9 @@ a{
 .btn-complementary-right{
     height: 40px;
     padding: 0 24px 0 12px; 
-    border: 1px solid pink;
-    background: pink;
-    color: red;
+    border: 1px solid $color5;
+    background: $color5;
+    color: $color6;
     filter: brightness(120%);
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;

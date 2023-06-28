@@ -7,6 +7,7 @@ import LogIn from './pages/LogIn';
 import SignIn from './pages/SignIn';
 import Teachers from './pages/Teachers';
 import Courses from './pages/Courses';
+import Footer from './components/Footer';
 
 const coursesURL = "http://localhost:3000/courses"
 
@@ -33,6 +34,7 @@ function App() {
         <Route path="/courses" element={<Courses courses={courses} />} />
 
       </Routes>
+      <Footer/>
       </Router>
     </div>
   );
