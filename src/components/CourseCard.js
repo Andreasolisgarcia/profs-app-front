@@ -1,4 +1,5 @@
 import React from 'react';
+import profilePicture from '../assets/img/profile-picture.png'
 
 const CourseCard = ({ course }) => {
     return (
@@ -7,7 +8,9 @@ const CourseCard = ({ course }) => {
             <div className="color-part-1">
                 <div className="image-content">
                     <div className="card-img-container">
-                         <div className="card-img"></div>                
+                         <div className="card-img">
+                         <img src= {profilePicture} />
+                        </div>                
                     </div>
                 </div>
 
