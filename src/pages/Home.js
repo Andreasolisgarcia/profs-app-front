@@ -4,11 +4,12 @@ import CardSlider from '../components/Homepage/CardSlider';
 import Steps from '../components/Homepage/Steps';
 
 
-const Home = () => {
+const Home = ({courses}) => {
+
     return (
         <>
             <Header/>
-            <CardSlider/>
+            <CardSlider courses={courses}/>
             <Steps/>
         </>
     );
