@@ -1,25 +1,40 @@
-import React from "react";
+import React, { useRef, useEffect } from 'react';
 import Searchbar from "../Searchbar";
-import TypeWriter from "./TypeWriter";
+import Typed from 'typed.js';
 
 
-const typeWriter =  [
-    "Grades",
-"Hobbies",
-"Skills",
-"Passions",
-"Interests",
-"Talents",
-"Job prospects",
-"Personal work",
-"Career opportunities",
-"Marketable skills",
-"Professional growth",
-"Networking",
-"Creativity"
-];
 
 const Header = () => {
+    const el = useRef(null); // Ref to store the DOM element
+
+  useEffect(() => {
+    // Initialize Typed.js inside the useEffect hook
+    const typed = new Typed(el.current, {
+      strings: [
+        "Grades",
+    "Hobbies",
+    "Skills",
+    "Passions",
+    "Interests",
+    "Talents",
+    "Job prospects",
+    "Personal work",
+    "Career opportunities",
+    "Marketable skills",
+    "Professional growth",
+    "Networking",
+    "Creativity"
+    ],
+    typeSpeed: 70,
+    backSpeed: 70,
+    loop: true
+    });
+
+    // Clean up the Typed instance during component unmount
+    return () => {
+      typed.destroy();
+    };
+  }, []);
   return (
     <>
       <header>
@@ -33,7 +48,7 @@ const Header = () => {
             </div>
             <div className="typing-text">
               <h2>
-                <span className="auto-type"><TypeWriter data={typeWriter} /></span>
+                <span className="auto-type" ref={el} />
               </h2>
             </div>
 
