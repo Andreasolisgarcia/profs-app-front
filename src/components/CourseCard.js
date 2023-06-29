@@ -21,7 +21,7 @@ const CourseCard = ({ course }) => {
                     <p>5.0</p>
                 </div>    
                 <div className="info-content">
-                    <div className="name">{course.teacher.contact_info.first_name} {course.teacher.contact_info.last_name}</div>
+                    <div className="name">{course.user.first_name} {course.user.last_name}</div>
                     <div className="course-title">
                         <h2>{course.title}</h2>
                     </div>
