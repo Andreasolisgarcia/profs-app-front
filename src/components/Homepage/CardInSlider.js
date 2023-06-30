@@ -109,7 +109,7 @@ const CardInSlider = ({course}) => {
             />
           </div>
           <div className="info-content">
-            <h2>{course.teacher.contact_info.first_name} {course.teacher.contact_info.last_name}</h2>
+            <h2>{course.user.first_name} {course.user.last_name}</h2>
             <span>{course.title}</span>
             <div className="footer">
               <p>{course.price} € h</p>
