@@ -20,8 +20,6 @@ function App() {
     });
   }, []);
 
-  console.log(courses);
- 
   return (
     <div className="App">
       <Router>

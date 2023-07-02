@@ -7,6 +7,8 @@ $color4: #209cfe;
 $color5: pink;
 $color6: red;
 $color0: #073b46;
+$color8: rgb(29,92,225);
+
 
 
 
@@ -104,4 +106,25 @@ a{
             text-transform: capitalize;
         }
 
+}
+
+.primary {
+	display: inline-block;
+	font-size: 0.8rem;
+	color: #fff !important;
+	background: rgb(var(--vs-primary) / 100%);
+	padding: 13px 25px;
+	border-radius: 17px;
+	transition: background-color 0.1s ease;
+	box-sizing: border-box;
+	transition: all 0.25s ease;
+	border: 0;
+	cursor: pointer;
+	box-shadow: 0 10px 20px -10px $color8;
+    opacity: 50%;
+	&:hover {
+		box-shadow: 0 20px 20px -10px $color8;
+        opacity: 50%;
+		transform: translateY(-5px);
+	}
 }
