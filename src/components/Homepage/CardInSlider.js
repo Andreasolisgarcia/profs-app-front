@@ -1,29 +1,19 @@
 import React, { useEffect } from "react";
-import profilePicture from '../../assets/img/profile-picture.png'
+import CourseCard from "../CourseCard";
+
 
 const CardInSlider = ({course}) => {
+
+
     useEffect(() => {
         const wrapper = document.querySelector(".wrapper");
         const carousel = document.querySelector(".carousel");
-        const firstCardWidth = carousel.querySelector(".card").offsetWidth;
+        const firstCardWidth = carousel.querySelector(".card-course").offsetWidth + 11;
         const arrowBtns = document.querySelectorAll(".wrapper i");
-        const carouselChildrens = [...carousel.children];
-    
+
         let isDragging = false;
         let isAutoPlay = true;
         let startX, startScrollLeft, timeoutId;
-    
-        let cardPerView = Math.round(carousel.offsetWidth / firstCardWidth);
- 
-        carouselChildrens.slice(-cardPerView).reverse().forEach(card => {
-          carousel.insertAdjacentHTML("afterbegin", card.outerHTML);
-        });
-    
-
-        carouselChildrens.slice(0, cardPerView).forEach(card => {
-          carousel.insertAdjacentHTML("beforeend", card.outerHTML);
-        });
-    
 
         carousel.classList.add("no-transition");
         carousel.scrollLeft = carousel.offsetWidth;
@@ -37,6 +27,7 @@ const CardInSlider = ({course}) => {
         });
     
         const dragStart = (e) => {
+          
           isDragging = true;
           carousel.classList.add("dragging");
 
@@ -100,23 +91,9 @@ const CardInSlider = ({course}) => {
     
     return (
         <>
-            <li className="card" key={course.id}>
-          <div className="img">
-            <img
-              src={profilePicture}
-              alt="img"
-              draggable="false"
-            />
-          </div>
-          <div className="info-content">
-            <h2>{course.user.first_name} {course.user.last_name}</h2>
-            <span>{course.title}</span>
-            <div className="footer">
-              <p>{course.price} € h</p>
-              <button className="more-btn"></button>
-            </div>
-          </div>
-        </li> 
+           
+          <CourseCard course={course} key={course.id}/>
+       
         </>
     );
 };

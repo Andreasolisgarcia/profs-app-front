@@ -5,13 +5,13 @@ $bottom-wave: $color7;
 $contrastcard: $color2;
 $btncolor: $color4;
 
-.card-slider{
+.card-slider {
   display: flex;
   padding: 0 35px;
   align-items: center;
   justify-content: center;
   min-height: 60vh;
-  background:  $color-waves;
+  background: $color-waves;
   position: relative;
   padding-top: 80px;
 
@@ -22,200 +22,116 @@ $btncolor: $color4;
     width: 100%;
     overflow: hidden;
     line-height: 0;
-}
+  }
 
   .top-wave svg {
     position: relative;
     display: block;
     width: calc(127% + 1.3px);
     height: 130px;
-}
+  }
 
   .top-wave .shape-fill {
     fill: $top-wave;
-}
-    .wrapper {
-        max-width: 1200px;
-        width: 75%;
-        position: relative;
-      
-      
+  }
+  .wrapper {
+    max-width: 1200px;
+    width: 65%;
+    position: relative;
+    margin: 45px 0;
 
-        ul{
-          padding: 17px 0;
-        }
+    ul {
+      padding: 17px 0;
+    }
 
-        i {
-          top: 50%;
-          height: 50px;
-          width: 50px;
-          cursor: pointer;
-          font-size: 1.25rem;
-          position: absolute;
-          text-align: center;
-          line-height: 50px;
-          background: #fff;
-          border-radius: 50%;
-          box-shadow: 0 3px 6px rgba(0,0,0,0.23);
-          transform: translateY(-50%);
-          transition: transform 0.1s linear;
-          z-index: 1; 
-          
-          &:active{
-            transform: translateY(-50%) scale(0.85);
-          }
-        }
-        i:first-child{
-          left: -22px;
-        }
-        i:last-child{
-          right: -22px;
-        }
-        .carousel{
-          display: grid;
-          grid-auto-flow: column;
-          grid-auto-columns: calc((100% / 3) - 12px);
-          overflow-x: auto;
-          scroll-snap-type: x mandatory;
-          gap: 16px;
-          border-radius: 8px;
-          scroll-behavior: smooth;
-          scrollbar-width: none;
+    i {
+      top: 50%;
+      height: 50px;
+      width: 50px;
+      cursor: pointer;
+      font-size: 1.25rem;
+      position: absolute;
+      text-align: center;
+      line-height: 50px;
+      background: #fff;
+      border-radius: 50%;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.23);
+      transform: translateY(-50%);
+      transition: transform 0.1s linear;
+      z-index: 2;
 
-          .card {
-            display: flex;
-            justify-content: flex-end;
-            scroll-snap-align: start;
-            height: 300px;
-            list-style: none;
-            background: #fff;
-            cursor: pointer;
-            padding-bottom: 15px;
-            flex-direction: column;
-            border-radius: 25px;
-            box-shadow: 0 1px 7px rgba(4, 3, 3, 0.299);
+      &:active {
+        transform: translateY(-50%) scale(0.85);
+      }
+    }
+    i:first-child {
+      left: -22px;
+    }
+    i:last-child {
+      right: -22px;
+    }
+    .carousel {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: calc((100% / 3) - 15px);
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 16px;
+      border-radius: 8px;
+      scroll-behavior: smooth;
+      scrollbar-width: none;
 
-            .img {
-              img {
-                width: 100px;
-                height: 100px;
-                border-radius: 50%;
-                object-fit: cover;
-                border: 4px solid #fff;
-              }
-            }
-            .info-content{
-                height: 50%;
-                display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    }
+  }
+
+  .carousel::-webkit-scrollbar {
+    display: none;
+  }
+  .carousel.no-transition {
+    scroll-behavior: auto;
+  }
+  .carousel.dragging {
+    scroll-snap-type: none;
+    scroll-behavior: auto;
+  }
+  .carousel.dragging .card {
+    cursor: grab;
+    user-select: none;
+  }
+  .carousel :where(.card, .img) {
+    display: flex;
+    justify-content: center;
     align-items: center;
-    padding: 10px 14px;
-            }
+  }
 
-            h2 {
-                color: #6A6D78;
-                font-size: 1.31rem;
-         
-             
-            }
+  @media screen and (max-width: 900px) {
+    .wrapper .carousel {
+      grid-auto-columns: calc((100% / 2) - 9px);
+    }
+  }
+  @media screen and (max-width: 600px) {
+    .wrapper .carousel {
+      grid-auto-columns: 100%;
+    }
+  }
 
-            span {
-                font-weight: 500;
-                font-size: 1.56rem;
-            }
+  .bottom-wave {
+    position: absolute;
+    bottom: -130px;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+  }
 
-            &:hover {
-              transform: scale(1.02); 
-            }
-            .footer {
-                max-height: 20px;
-                width: 100%;
-        
-                font-size: 0.85rem;
-                color: $contrastcard;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-        
-                .more-btn {
-                  position: relative;
-                  border-radius: 50px;
-                  height: 30px;
-                  width: 30px;
-                  font-size: 1.7rem;
-                  color: $contrastcard;
-                  background: $btncolor;
-                  border: none;
-                  transition: transform 0.6s ease;
-        
-                  &:before {
-                    content: "+";
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%) translateY(-2px);
-                  }
-        
-                  &:hover {
-                    background: $contrast;
-                    color: $color-up;
-                    cursor: pointer;
-                  }
-                }
-            }
-          }
-        }
-      }
-    
-      .carousel::-webkit-scrollbar {
-        display: none;
-      }
-      .carousel.no-transition {
-        scroll-behavior: auto;
-      }
-      .carousel.dragging {
-        scroll-snap-type: none;
-        scroll-behavior: auto;
-      }
-      .carousel.dragging .card {
-        cursor: grab;
-        user-select: none;
-      }
-      .carousel :where(.card, .img) {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      
-      @media screen and (max-width: 900px) {
-        .wrapper .carousel {
-          grid-auto-columns: calc((100% / 2) - 9px);
-        }
-      }
-      @media screen and (max-width: 600px) {
-        .wrapper .carousel {
-          grid-auto-columns: 100%;
-        }
-      }   
-      
-      .bottom-wave {
-        position: absolute;
-        bottom: -130px;
-        left: 0;
-        width: 100%;
-        overflow: hidden;
-        line-height: 0;
-    }
-    
-      .bottom-wave svg {
-        position: relative;
-        display: block;
-        width: calc(127% + 1.3px);
-        height: 130px;
-    }
-    
-      .bottom-wave .shape-fill {
-        fill: $bottom-wave;
-    }
+  .bottom-wave svg {
+    position: relative;
+    display: block;
+    width: calc(127% + 1.3px);
+    height: 130px;
+  }
+
+  .bottom-wave .shape-fill {
+    fill: $bottom-wave;
+  }
 }

@@ -1,7 +1,27 @@
-import React from 'react';
+import { React , useState} from 'react';
 import profilePicture from '../assets/img/profile-picture.png'
+import Modal from './Modal';
+
 
 const CourseCard = ({ course }) => {
+    const [modalIsOpen, setModalIsOpen] = useState(false);
+
+    const openModal = () => {
+        setModalIsOpen(true);
+   
+    };
+  
+    const closeModal = () => {
+        setModalIsOpen(false);
+    };
+
+    if(modalIsOpen){
+        document.body.classList.add('body-active-modal')
+    }else {
+        document.body.classList.remove('body-active-modal')
+    }
+
+    
     return (
         <>
         <div className="card-course">
@@ -9,7 +29,7 @@ const CourseCard = ({ course }) => {
                 <div className="image-content">
                     <div className="card-img-container">
                          <div className="card-img">
-                         <img src= {profilePicture} />
+                         <img src= {profilePicture} alt="profile-user"/>
                         </div>                
                     </div>
                 </div>
@@ -28,11 +48,17 @@ const CourseCard = ({ course }) => {
 
                     <div className="footer">
                         <p>{course.price} h</p>
-                        <button className="more-btn"></button>
+                        <button className="more-btn" onClick={openModal}></button>
                     </div>
                 </div>
             </div>
         </div>
+
+        {modalIsOpen && (
+        
+        <Modal course= {course} closeModal= {closeModal} />
+    
+      )}
         </>
     );
 };
