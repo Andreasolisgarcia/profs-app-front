@@ -30,6 +30,7 @@
     animation: fadeIn 1s ease both;
 
     position: relative;
+   
 
     .close {
       filter: grayscale(1);
@@ -60,6 +61,10 @@
           color: $color8;
         }
       }
+    }
+    .footer {
+        display: flex;
+        flex-direction: row-reverse;
     }
   }
 }
