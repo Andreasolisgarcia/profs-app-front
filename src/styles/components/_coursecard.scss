@@ -1,15 +1,19 @@
-$color-up: white;
+$color-up: rgb(248, 248, 248);
 $contrast: skyblue;
 $clair: white;
 $gray: gray;
 $star-text: green;
 $star: rgb(255, 204, 0);
+$btn-plus: rgb(253, 226, 231);
+$plus: skyblue;
 
+$img-diameter: 145px ;
 .card-course {
   border-radius: 25px;
   background-color: $clair;
   box-shadow: 0 1px 7px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
+  position: relative;
 
   .color-part-1 {
     background: $clair;
@@ -21,23 +25,31 @@ $star: rgb(255, 204, 0);
       padding: 25px 0;
       background: $color-up;
       border-radius: 25px 25px 25px 0;
+ 
 
       .card-img-container {
         object-fit: cover;
         border-radius: 50%;
-        height: 145px;
-        width: 145px;
+        height: $img-diameter;
+        width: $img-diameter;
         border-radius: 50%;
         background: $clair;
         padding: 3px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 3px solid $color-up;
 
         .card-img {
           img {
-            width: 100%;
-            height: 100%;
+            height: $img-diameter;
+            width: $img-diameter;
           }
-        }
+
+        
       }
+    }
+    
     }
   }
 
@@ -45,7 +57,6 @@ $star: rgb(255, 204, 0);
     background: $color-up;
     border-radius: 0 0 25px 25px;
     height: 200px;
-    position: relative;
     margin-bottom: 10px;
 
     .star {
@@ -113,8 +124,8 @@ $star: rgb(255, 204, 0);
           height: 30px;
           width: 30px;
           font-size: 1.7rem;
-          color: $contrast;
-          background: $color-up;
+          color: $plus;
+          background: $btn-plus;
           border: none;
           transition: transform 0.6s ease;
 
@@ -145,5 +156,16 @@ $star: rgb(255, 204, 0);
   }
   &:hover {
     transform: scale(1.02);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .card-course .color-part-1 .image-content .card-img-container .card-img img {     
+    height: 100px;
+    width: 100px;
+}  
+  .card-course .color-part-1 .image-content .card-img-container {
+    height: 100px;
+    width: 100px;
   }
 }
