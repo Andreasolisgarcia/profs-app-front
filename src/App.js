@@ -9,7 +9,7 @@ import Teachers from './pages/Teachers';
 import Courses from './pages/Courses';
 import Footer from './components/Footer';
 
-const coursesURL = "http://localhost:3000/courses"
+const coursesURL = "https://myprofsapp-api-ab16372e255e.herokuapp.com/courses"
 
 function App() {
   const[courses, setCourses] = useState([])
